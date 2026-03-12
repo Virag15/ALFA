@@ -7,35 +7,26 @@
     <title>Alfa SEO — Ads & SEO Agency, Nashik</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
         rel="stylesheet" />
     <style>
         /* ── RESET ── */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #fcfcfc;
-            --bg-alt: #f4f4f4;
+            --bg: #fafafa;
+            --bg-alt: #f0f0f0;
+            --bg-dark: #111111;
             --text: #111111;
             --text-muted: #6b6b6b;
             --accent: #e8503a;
+            --accent-hover: #c93d28;
             --rule: #d4d4d4;
             --rule-light: #e8e8e8;
             --font: 'Inter', system-ui, -apple-system, sans-serif;
-            --grid-gap: 24px;
         }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
+        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
             font-family: var(--font);
@@ -47,111 +38,105 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        button { font-family: inherit; cursor: pointer; border: none; }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .container-wide { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
 
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-        }
-
-        /* ── GRID CONTAINER ── */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--grid-gap);
-        }
-
-        /* ── TYPOGRAPHIC SCALE ── */
-        .section-label {
-            font-size: 0.7rem;
+        /* ── TYPOGRAPHY ── */
+        .label {
+            font-size: 0.68rem;
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-muted);
             margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
-        .section-label::before {
-            content: '';
-            width: 32px;
-            height: 1px;
-            background: var(--text-muted);
-        }
-
-        .section-title {
+        .heading-xl {
             font-weight: 200;
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            line-height: 1.08;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
+            font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+            line-height: 1.0;
+            letter-spacing: -0.04em;
         }
 
-        .section-desc {
+        .heading-lg {
+            font-weight: 200;
+            font-size: clamp(2rem, 4.5vw, 3.6rem);
+            line-height: 1.06;
+            letter-spacing: -0.03em;
+        }
+
+        .body-text {
             color: var(--text-muted);
             font-size: 1rem;
             font-weight: 400;
-            max-width: 480px;
             line-height: 1.75;
+            max-width: 480px;
+        }
+
+        .heading-xl em, .heading-lg em {
+            font-style: normal;
+            font-weight: 500;
         }
 
         /* ── BUTTONS ── */
-        .btn-primary {
+        .btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--accent);
-            color: #ffffff;
             font-weight: 500;
-            font-size: 0.82rem;
-            letter-spacing: 0.04em;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            padding: 16px 36px;
-            border-radius: 0;
-            transition: background 0.3s;
+            padding: 16px 40px;
+            transition: all 0.3s;
         }
 
-        .btn-primary:hover {
-            background: #c93d28;
+        .btn-fill {
+            background: var(--accent);
+            color: #fff;
         }
 
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .btn-fill:hover { background: var(--accent-hover); }
+
+        .btn-ghost {
             background: transparent;
             color: var(--text);
-            font-weight: 500;
-            font-size: 0.82rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            padding: 16px 36px;
-            border-radius: 0;
             border: 1px solid var(--text);
-            transition: background 0.3s, color 0.3s;
         }
 
-        .btn-outline:hover {
+        .btn-ghost:hover {
             background: var(--text);
             color: var(--bg);
         }
 
-        /* ── REVEAL ── */
+        .btn-white {
+            background: #fff;
+            color: var(--text);
+        }
+
+        .btn-white:hover { background: var(--rule-light); }
+
+        .btn-ghost-white {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .btn-ghost-white:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* ── REVEAL SYSTEM ── */
         .reveal {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(28px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.visible {
@@ -159,30 +144,31 @@
             transform: translateY(0);
         }
 
+        .reveal-delay-1 { transition-delay: 0.08s; }
+        .reveal-delay-2 { transition-delay: 0.16s; }
+        .reveal-delay-3 { transition-delay: 0.24s; }
+        .reveal-delay-4 { transition-delay: 0.32s; }
+        .reveal-delay-5 { transition-delay: 0.4s; }
+        .reveal-delay-6 { transition-delay: 0.48s; }
+
         /* ── NAVBAR ── */
         .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 100;
             padding: 20px 0;
-            transition: background 0.4s, padding 0.4s;
+            transition: all 0.4s;
         }
 
         .navbar.scrolled {
-            background: rgba(252, 252, 252, 0.92);
+            background: rgba(250,250,250,0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 14px 0;
             border-bottom: 1px solid var(--rule-light);
         }
 
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
 
         .logo {
             font-weight: 700;
@@ -191,10 +177,7 @@
             text-transform: uppercase;
         }
 
-        .logo span {
-            font-weight: 300;
-            color: var(--accent);
-        }
+        .logo span { font-weight: 300; color: var(--accent); }
 
         .nav-links {
             display: flex;
@@ -204,7 +187,7 @@
         }
 
         .nav-links a {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 500;
             letter-spacing: 0.06em;
             text-transform: uppercase;
@@ -212,25 +195,15 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-        .nav-links a::after {
-            display: none;
-        }
+        .nav-links a:hover { color: var(--text); }
 
         .nav-cta {
             background: var(--accent);
-            color: #ffffff !important;
+            color: #fff !important;
             padding: 10px 24px;
-            font-weight: 500;
         }
 
-        .nav-cta:hover {
-            color: #ffffff;
-            background: #c93d28;
-        }
+        .nav-cta:hover { background: var(--accent-hover); }
 
         .hamburger {
             display: none;
@@ -251,298 +224,212 @@
         .hero {
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            padding: 160px 0 120px;
+            flex-direction: column;
+            justify-content: center;
+            padding: 160px 0 0;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero-bg-glow {
-            display: none;
+        .hero-inner {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
+        .hero .label { display: inline-flex; align-items: center; gap: 8px; }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            border: none;
-            padding: 0;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-        }
-
-        .hero-badge .dot {
-            width: 6px;
-            height: 6px;
+        .hero .dot {
+            width: 6px; height: 6px;
             background: var(--accent);
             border-radius: 50%;
-            animation: pulse-dot 2s infinite;
+            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse-dot {
+        @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
         }
 
-        .hero h1 {
-            font-weight: 200;
-            font-size: clamp(3rem, 6vw, 5rem);
-            line-height: 1.02;
-            letter-spacing: -0.04em;
-            margin-bottom: 32px;
-        }
+        .hero h1 { margin: 32px 0; }
 
-        .hero h1 em {
-            font-style: normal;
-            font-weight: 500;
-        }
-
-        .hero-desc {
-            color: var(--text-muted);
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.75;
-            max-width: 420px;
-            margin-bottom: 48px;
+        .hero .body-text {
+            margin: 0 auto 48px;
+            text-align: center;
+            max-width: 520px;
         }
 
         .hero-actions {
             display: flex;
             gap: 16px;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .hero-stats {
-            display: flex;
-            gap: 48px;
-            margin-top: 72px;
-            padding-top: 32px;
+        /* ── HERO STATS BAR ── */
+        .stats-bar {
+            margin-top: 80px;
             border-top: 1px solid var(--rule);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
         }
 
-        .hero-stat h3 {
+        .stats-bar .stat {
+            padding: 40px 32px;
+            border-right: 1px solid var(--rule);
+            text-align: center;
+        }
+
+        .stats-bar .stat:last-child { border-right: none; }
+
+        .stat-number {
             font-weight: 100;
-            font-size: 3rem;
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
             letter-spacing: -0.04em;
-            color: var(--text);
             line-height: 1;
         }
 
-        .hero-stat p {
-            font-size: 0.7rem;
+        .stat-label {
+            font-size: 0.68rem;
             font-weight: 500;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
-        /* ── HERO VISUAL: GEOMETRIC GRID ── */
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-graphic {
-            width: 100%;
-            max-width: 480px;
-            aspect-ratio: 1;
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            gap: 1px;
-        }
-
-        .orbit-ring,
-        .orbit-dot,
-        .hero-graphic-center {
-            display: none;
-        }
-
-        .hero-graphic::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            background-image:
-                linear-gradient(to right, var(--rule-light) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--rule-light) 1px, transparent 1px);
-            background-size: calc(100% / 6) calc(100% / 6);
-        }
-
-        .hero-graphic::after {
-            content: 'A';
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 100;
-            font-size: 18rem;
-            letter-spacing: -0.06em;
-            color: var(--accent);
-            opacity: 0.08;
-            line-height: 1;
-        }
-
-        /* ── MARQUEE ── */
-        .marquee-section {
-            border-top: 1px solid var(--rule);
+        /* ── LOGO STRIP ── */
+        .logo-strip {
             border-bottom: 1px solid var(--rule);
-            padding: 20px 0;
+            padding: 40px 0;
             overflow: hidden;
         }
 
-        .marquee-track {
-            display: flex;
-            gap: 48px;
-            animation: marquee 30s linear infinite;
-            width: max-content;
-        }
-
-        @keyframes marquee {
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        .marquee-item {
-            font-size: 0.72rem;
+        .logo-strip-label {
+            font-size: 0.62rem;
             font-weight: 500;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
             color: var(--text-muted);
-            white-space: nowrap;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .logo-strip-row {
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 48px;
+            gap: 56px;
+            flex-wrap: wrap;
+            padding: 0 24px;
         }
 
-        .marquee-item::after {
-            content: '';
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            flex-shrink: 0;
+        .logo-strip-row span {
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--rule);
+            transition: color 0.3s;
+            white-space: nowrap;
         }
 
-        /* ── SERVICES ── */
-        .services {
-            padding: 160px 0;
-        }
+        .logo-strip-row span:hover { color: var(--text-muted); }
 
-        .services-header {
+        /* ── SERVICES BENTO ── */
+        .services { padding: 160px 0; }
+
+        .services-top {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: end;
-            margin-bottom: 80px;
+            margin-bottom: 64px;
         }
 
-        .services-grid {
+        .bento {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0;
+            grid-template-rows: auto auto;
+            gap: 1px;
+            background: var(--rule);
         }
 
-        .service-card {
-            background: transparent;
-            border: none;
-            border-top: 1px solid var(--rule);
-            border-radius: 0;
-            padding: 40px 32px 40px 0;
+        .bento-card {
+            background: var(--bg);
+            padding: 44px 36px;
             transition: background 0.3s;
-            position: relative;
-            overflow: hidden;
         }
 
-        .service-card:nth-child(3n+2),
-        .service-card:nth-child(3n+3) {
-            padding-left: 32px;
-            border-left: 1px solid var(--rule);
-        }
+        .bento-card:hover { background: var(--bg-alt); }
 
-        .service-card:hover {
-            background: var(--bg-alt);
-        }
+        .bento-card.span-2 { grid-column: span 2; }
 
-        .service-card::before {
-            display: none;
-        }
-
-        .service-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 0;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .bento-card svg {
+            width: 28px; height: 28px;
+            color: var(--accent);
+            stroke-width: 1.5;
             margin-bottom: 28px;
         }
 
-        .service-icon svg {
-            width: 24px;
-            height: 24px;
-            color: var(--accent);
-            stroke-width: 1.5;
-        }
-
-        .service-card h3 {
+        .bento-card h3 {
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             letter-spacing: -0.01em;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .service-card p {
+        .bento-card p {
             color: var(--text-muted);
             font-size: 0.88rem;
-            font-weight: 400;
             line-height: 1.7;
+            max-width: 420px;
         }
 
-        .service-tag {
+        .bento-tag {
             display: inline-block;
-            margin-top: 24px;
-            font-size: 0.65rem;
+            margin-top: 20px;
+            font-size: 0.62rem;
             font-weight: 500;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--accent);
-            padding: 0;
-            border-radius: 0;
-            border: none;
+        }
+
+        /* ── METRICS STRIP ── */
+        .metrics-strip {
+            background: var(--bg-dark);
+            color: #fff;
+            padding: 100px 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .metric { text-align: center; }
+
+        .metric-number {
+            font-weight: 100;
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            letter-spacing: -0.04em;
+            line-height: 1;
+            color: var(--accent);
+        }
+
+        .metric-text {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-top: 14px;
         }
 
         /* ── ABOUT ── */
-        .about {
-            padding: 160px 0;
-            background: var(--bg-alt);
-        }
+        .about { padding: 160px 0; }
 
         .about-grid {
             display: grid;
@@ -554,7 +441,6 @@
         .about-features {
             display: flex;
             flex-direction: column;
-            gap: 0;
             margin-top: 48px;
         }
 
@@ -566,32 +452,19 @@
             border-top: 1px solid var(--rule);
         }
 
-        .about-feature:last-child {
-            border-bottom: 1px solid var(--rule);
-        }
+        .about-feature:last-child { border-bottom: 1px solid var(--rule); }
 
-        .about-feature-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 0;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .about-feature-icon svg {
-            width: 18px;
-            height: 18px;
+        .about-feature svg {
+            width: 20px; height: 20px;
             color: var(--accent);
             stroke-width: 1.5;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
         .about-feature h4 {
             font-weight: 500;
             font-size: 0.92rem;
-            letter-spacing: -0.01em;
             margin-bottom: 4px;
         }
 
@@ -603,73 +476,52 @@
 
         .about-visual {
             position: relative;
+            background: var(--bg-dark);
+            padding: 56px 48px;
         }
 
-        .about-card-stack {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: var(--rule);
+        .about-visual .label { color: rgba(255,255,255,0.4); }
+
+        .about-visual-quote {
+            font-weight: 200;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            line-height: 1.45;
+            letter-spacing: -0.02em;
+            color: #fff;
+            margin-bottom: 32px;
         }
 
-        .about-metric-card {
-            background: var(--bg);
-            border: none;
-            border-radius: 0;
-            padding: 48px 32px;
-            text-align: left;
-        }
-
-        .about-metric-card:nth-child(2),
-        .about-metric-card:nth-child(3) {
-            transform: none;
-        }
-
-        .about-metric-card h3 {
-            font-weight: 100;
-            font-size: 3.2rem;
-            letter-spacing: -0.04em;
-            color: var(--text);
-            line-height: 1;
-        }
-
-        .about-metric-card p {
-            font-size: 0.7rem;
+        .about-visual-author {
+            font-size: 0.72rem;
             font-weight: 500;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--text-muted);
-            margin-top: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .about-visual-author strong {
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
         }
 
         /* ── PRICING ── */
-        .pricing {
-            padding: 160px 0;
-        }
+        .pricing { padding: 160px 0; background: var(--bg-alt); }
 
-        .pricing-header {
-            text-align: left;
-            margin-bottom: 80px;
+        .pricing-top {
             max-width: 560px;
-        }
-
-        .pricing-header .section-desc {
-            margin: 0;
+            margin-bottom: 80px;
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 0;
-            align-items: stretch;
             border-top: 1px solid var(--rule);
             border-bottom: 1px solid var(--rule);
         }
 
         .pricing-card {
             background: transparent;
-            border: none;
-            border-radius: 0;
             padding: 48px 40px;
             display: flex;
             flex-direction: column;
@@ -677,38 +529,27 @@
             position: relative;
         }
 
-        .pricing-card:nth-child(2),
-        .pricing-card:nth-child(3) {
-            border-left: 1px solid var(--rule);
-        }
+        .pricing-card + .pricing-card { border-left: 1px solid var(--rule); }
 
-        .pricing-card:hover {
-            background: var(--bg-alt);
-            transform: none;
-        }
+        .pricing-card:hover { background: var(--bg); }
 
-        .pricing-card.featured {
-            border-color: var(--rule);
-            background: var(--bg-alt);
-        }
+        .pricing-card.featured { background: var(--bg); }
 
         .pricing-card.featured::before {
             content: 'Popular';
             position: absolute;
-            top: 48px;
-            right: 40px;
+            top: 48px; right: 40px;
             background: var(--accent);
-            color: #ffffff;
-            font-size: 0.6rem;
+            color: #fff;
+            font-size: 0.58rem;
             font-weight: 600;
             padding: 4px 12px;
-            border-radius: 0;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
 
         .pricing-tier {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.15em;
@@ -718,7 +559,7 @@
 
         .pricing-price {
             font-weight: 100;
-            font-size: 3.4rem;
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
             letter-spacing: -0.04em;
             line-height: 1;
             margin-bottom: 4px;
@@ -743,7 +584,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 13px;
             margin-bottom: 40px;
             flex: 1;
         }
@@ -752,175 +593,125 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 0.85rem;
-            font-weight: 400;
+            font-size: 0.84rem;
             color: var(--text-muted);
         }
 
         .pricing-features li svg {
-            width: 14px;
-            height: 14px;
+            width: 14px; height: 14px;
             color: var(--accent);
             flex-shrink: 0;
-            stroke-width: 2;
         }
 
-        .pricing-card .btn-primary,
-        .pricing-card .btn-outline {
+        .pricing-card .btn {
             width: 100%;
             justify-content: center;
         }
 
         /* ── TESTIMONIALS ── */
-        .testimonials {
-            padding: 160px 0;
-            background: var(--bg-alt);
-        }
+        .testimonials { padding: 160px 0; }
 
-        .testimonials-grid {
+        .testimonials-top {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            margin-top: 80px;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: end;
+            margin-bottom: 80px;
+        }
+
+        .testimonial-featured {
             border-top: 1px solid var(--rule);
-        }
-
-        .testimonial-card {
-            background: transparent;
-            border: none;
             border-bottom: 1px solid var(--rule);
-            border-radius: 0;
-            padding: 48px 40px 48px 0;
+            padding: 72px 0;
+            text-align: center;
         }
 
-        .testimonial-card:nth-child(2),
-        .testimonial-card:nth-child(3) {
-            padding-left: 40px;
-            border-left: 1px solid var(--rule);
+        .testimonial-featured blockquote {
+            font-weight: 200;
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            line-height: 1.45;
+            letter-spacing: -0.02em;
+            max-width: 800px;
+            margin: 0 auto 40px;
         }
 
-        .testimonial-stars {
-            display: flex;
-            gap: 2px;
-            margin-bottom: 24px;
-        }
-
-        .testimonial-stars svg {
-            width: 14px;
-            height: 14px;
-            color: var(--accent);
-        }
-
-        .testimonial-card blockquote {
-            font-size: 1rem;
-            font-weight: 300;
-            color: var(--text);
-            line-height: 1.75;
-            margin-bottom: 32px;
-            font-style: normal;
-        }
-
-        .testimonial-author {
+        .testimonial-featured .t-author {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 14px;
         }
 
-        .testimonial-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 0;
+        .t-avatar {
+            width: 40px; height: 40px;
             background: var(--bg-alt);
             border: 1px solid var(--rule);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            font-size: 0.7rem;
-            letter-spacing: 0.02em;
+            font-size: 0.72rem;
             color: var(--text);
         }
 
-        .testimonial-author h4 {
-            font-size: 0.82rem;
-            font-weight: 500;
+        .t-author h4 { font-size: 0.82rem; font-weight: 500; }
+        .t-author p { font-size: 0.72rem; color: var(--text-muted); }
+
+        .testimonials-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-top: 0;
+            border-bottom: 1px solid var(--rule);
         }
 
-        .testimonial-author p {
-            font-size: 0.72rem;
-            font-weight: 400;
-            color: var(--text-muted);
+        .testimonials-row .t-card {
+            padding: 48px 40px;
+        }
+
+        .testimonials-row .t-card + .t-card {
+            border-left: 1px solid var(--rule);
+        }
+
+        .t-card .t-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 24px;
+        }
+
+        .t-card .t-stars svg {
+            width: 13px; height: 13px;
+            color: var(--accent);
+        }
+
+        .t-card blockquote {
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.75;
+            margin-bottom: 28px;
         }
 
         /* ── CTA ── */
-        .cta-section {
-            padding: 160px 0;
-        }
+        .cta { padding: 160px 0; }
 
         .cta-box {
-            background: var(--text);
-            border: none;
-            border-radius: 0;
+            background: var(--bg-dark);
             padding: 100px 80px;
-            text-align: left;
-            position: relative;
-            overflow: hidden;
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            grid-template-columns: 1.3fr 1fr;
             gap: 80px;
             align-items: center;
         }
 
-        .cta-box::before {
-            display: none;
-        }
-
-        .cta-box .section-label {
-            color: rgba(255, 255, 255, 0.4);
-            justify-content: flex-start;
-        }
-
-        .cta-box .section-label::before {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-box .section-title {
-            color: #ffffff;
-            margin-bottom: 0;
-        }
-
-        .cta-box .section-desc {
-            color: rgba(255, 255, 255, 0.55);
-            margin: 0;
-            text-align: left;
-        }
+        .cta-box .heading-lg { color: #fff; }
+        .cta-box .label { color: rgba(255,255,255,0.35); }
+        .cta-box .body-text { color: rgba(255,255,255,0.5); max-width: 400px; }
 
         .cta-actions {
             display: flex;
             gap: 16px;
-            justify-content: flex-start;
             flex-wrap: wrap;
             margin-top: 32px;
-        }
-
-        .cta-box .btn-primary {
-            background: #ffffff;
-            color: var(--text);
-        }
-
-        .cta-box .btn-primary:hover {
-            background: var(--rule-light);
-        }
-
-        .cta-box .btn-outline {
-            border-color: rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-        }
-
-        .cta-box .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-            color: #ffffff;
         }
 
         /* ── FOOTER ── */
@@ -946,30 +737,21 @@
 
         .footer-col h4 {
             font-weight: 500;
-            font-size: 0.68rem;
+            font-size: 0.66rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin-bottom: 20px;
-            color: var(--text);
         }
 
-        .footer-col ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 
         .footer-col li a {
             font-size: 0.85rem;
-            font-weight: 400;
             color: var(--text-muted);
             transition: color 0.3s;
         }
 
-        .footer-col li a:hover {
-            color: var(--text);
-        }
+        .footer-col li a:hover { color: var(--text); }
 
         .footer-bottom {
             display: flex;
@@ -978,95 +760,31 @@
             padding-top: 32px;
             border-top: 1px solid var(--rule);
             font-size: 0.75rem;
-            font-weight: 400;
             color: var(--text-muted);
         }
 
-        .footer-socials {
-            display: flex;
-            gap: 16px;
-        }
+        .footer-socials { display: flex; gap: 12px; }
 
         .footer-socials a {
-            width: 32px;
-            height: 32px;
-            border-radius: 0;
+            width: 32px; height: 32px;
             border: 1px solid var(--rule);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: border-color 0.3s, background 0.3s;
+            transition: all 0.3s;
         }
 
-        .footer-socials a:hover {
-            border-color: var(--text);
-            background: var(--text);
-        }
+        .footer-socials a:hover { border-color: var(--text); background: var(--text); }
+        .footer-socials a:hover svg { color: var(--bg); }
+        .footer-socials svg { width: 14px; height: 14px; color: var(--text-muted); transition: color 0.3s; }
 
-        .footer-socials a:hover svg {
-            color: var(--bg);
-        }
-
-        .footer-socials svg {
-            width: 14px;
-            height: 14px;
-            color: var(--text-muted);
-            transition: color 0.3s;
-        }
-
-        /* ── RESPONSIVE ── */
+        /* ── RESPONSIVE: TABLET ── */
         @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .bento { grid-template-columns: 1fr 1fr; }
+            .bento-card.span-2 { grid-column: span 2; }
 
-            .service-card:nth-child(3n+2),
-            .service-card:nth-child(3n+3) {
-                padding-left: 0;
-                border-left: none;
-            }
-
-            .service-card:nth-child(even) {
-                padding-left: 32px;
-                border-left: 1px solid var(--rule);
-            }
-
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .pricing-card:nth-child(2),
-            .pricing-card:nth-child(3) {
-                border-left: none;
-            }
-
-            .pricing-card:nth-child(even) {
-                border-left: 1px solid var(--rule);
-            }
-
+            .pricing-grid { grid-template-columns: 1fr 1fr; }
             .pricing-card:last-child {
-                grid-column: span 2;
-                max-width: 50%;
-                justify-self: center;
-                border-left: none;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .testimonial-card:nth-child(2),
-            .testimonial-card:nth-child(3) {
-                padding-left: 0;
-                border-left: none;
-            }
-
-            .testimonial-card:nth-child(even) {
-                padding-left: 40px;
-                border-left: 1px solid var(--rule);
-            }
-
-            .testimonial-card:last-child {
                 grid-column: span 2;
                 max-width: 50%;
                 justify-self: center;
@@ -1076,27 +794,26 @@
             .cta-box {
                 grid-template-columns: 1fr;
                 gap: 40px;
-                padding: 80px 60px;
+                padding: 72px 56px;
             }
+
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+
+            .about-grid { gap: 64px; }
+
+            .testimonials-top { grid-template-columns: 1fr; gap: 24px; }
         }
 
+        /* ── RESPONSIVE: MOBILE ── */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
 
             .nav-links.open {
                 display: flex;
                 flex-direction: column;
                 position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                inset: 0;
                 background: var(--bg);
                 z-index: 200;
                 justify-content: center;
@@ -1104,78 +821,60 @@
                 gap: 28px;
             }
 
-            .nav-links.open a {
-                font-size: 1.2rem;
-                color: var(--text);
+            .nav-links.open a { font-size: 1.2rem; color: var(--text); }
+
+            .hero { padding: 120px 0 0; }
+            .hero h1 { margin: 24px 0; }
+            .hero-actions { flex-direction: column; align-items: center; }
+
+            .stats-bar {
+                grid-template-columns: 1fr 1fr;
+                margin-top: 56px;
             }
 
-            .hero {
-                padding: 120px 0 80px;
+            .stats-bar .stat {
+                padding: 28px 20px;
             }
 
-            .hero .container {
-                grid-template-columns: 1fr;
-            }
+            .stats-bar .stat:nth-child(2) { border-right: none; }
 
-            .hero-visual {
-                display: none;
-            }
+            .stat-number { font-size: 2rem; }
 
-            .hero h1 {
-                font-size: clamp(2.2rem, 8vw, 3rem);
-            }
-
-            .hero-stat h3 {
-                font-size: 2.2rem;
-            }
-
-            .hero-stats {
-                gap: 32px;
-            }
+            .logo-strip-row { gap: 32px; }
+            .logo-strip-row span { font-size: 0.82rem; }
 
             .services,
             .about,
             .pricing,
             .testimonials,
-            .cta-section {
-                padding: 100px 0;
-            }
+            .cta { padding: 100px 0; }
 
-            .section-title {
-                font-size: clamp(1.8rem, 6vw, 2.6rem);
-            }
-
-            .services-header {
+            .services-top {
                 grid-template-columns: 1fr;
                 gap: 24px;
                 margin-bottom: 48px;
             }
 
-            .services-grid {
+            .bento {
                 grid-template-columns: 1fr;
             }
 
-            .service-card,
-            .service-card:nth-child(even),
-            .service-card:nth-child(3n+2),
-            .service-card:nth-child(3n+3) {
-                padding-left: 0;
-                padding-right: 0;
-                border-left: none;
-            }
+            .bento-card.span-2 { grid-column: auto; }
+
+            .bento-card { padding: 32px 24px; }
+
+            .metrics-strip { padding: 72px 0; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .metric-number { font-size: 2.4rem; }
 
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
             }
 
-            .about-visual {
-                order: -1;
-            }
+            .about-visual { order: -1; padding: 40px 28px; }
 
-            .pricing-header {
-                margin-bottom: 48px;
-            }
+            .pricing-top { margin-bottom: 48px; }
 
             .pricing-grid {
                 grid-template-columns: 1fr;
@@ -1183,100 +882,61 @@
                 border-top: 1px solid var(--rule);
             }
 
-            .pricing-card,
-            .pricing-card:nth-child(2),
-            .pricing-card:nth-child(3),
-            .pricing-card:nth-child(even) {
-                border-left: none;
+            .pricing-card {
                 border-bottom: 1px solid var(--rule);
                 padding: 36px 0;
             }
+
+            .pricing-card + .pricing-card { border-left: none; }
 
             .pricing-card:last-child {
                 grid-column: auto;
                 max-width: 100%;
             }
 
-            .pricing-card.featured::before {
-                top: 36px;
-                right: 0;
-            }
+            .pricing-card.featured::before { right: 0; top: 36px; }
+            .pricing-price { font-size: 2.4rem; }
 
-            .pricing-price {
-                font-size: 2.6rem;
-            }
+            .testimonial-featured { padding: 48px 0; }
 
-            .testimonials-grid {
+            .testimonials-row {
                 grid-template-columns: 1fr;
-                margin-top: 48px;
             }
 
-            .testimonial-card,
-            .testimonial-card:nth-child(2),
-            .testimonial-card:nth-child(3),
-            .testimonial-card:nth-child(even) {
-                padding: 32px 0;
-                border-left: none;
-            }
+            .testimonials-row .t-card + .t-card { border-left: none; border-top: 1px solid var(--rule); }
+            .testimonials-row .t-card { padding: 32px 0; }
 
-            .testimonial-card:last-child {
-                grid-column: auto;
-                max-width: 100%;
-            }
+            .cta-box { padding: 48px 24px; }
 
-            .cta-box {
-                padding: 48px 24px;
-            }
-
-            .btn-primary,
-            .btn-outline {
+            .btn {
                 padding: 14px 28px;
-                font-size: 0.78rem;
+                font-size: 0.76rem;
+            }
+
+            .hero-actions .btn,
+            .cta-actions .btn,
+            .pricing-card .btn {
                 width: 100%;
                 justify-content: center;
             }
 
-            .cta-actions {
-                flex-direction: column;
-            }
+            .cta-actions { flex-direction: column; }
 
-            .hero-actions {
-                flex-direction: column;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
         }
 
+        /* ── RESPONSIVE: SMALL ── */
         @media (max-width: 480px) {
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
+            .stats-bar { grid-template-columns: 1fr; }
+            .stats-bar .stat { border-right: none; border-bottom: 1px solid var(--rule); }
+            .stats-bar .stat:last-child { border-bottom: none; }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .metrics-grid { grid-template-columns: 1fr; gap: 32px; }
 
-            .about-card-stack {
-                grid-template-columns: 1fr;
-            }
+            .footer-grid { grid-template-columns: 1fr; }
 
-            .about-metric-card {
-                padding: 32px 24px;
-            }
-
-            .about-metric-card h3 {
-                font-size: 2.4rem;
-            }
+            .logo-strip-row { flex-direction: column; gap: 18px; }
         }
     </style>
 </head>
@@ -1302,163 +962,116 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge"><span class="dot"></span> Based in Nashik, India</div>
-                <h1>We make brands <em>rank, convert</em> & grow.</h1>
-                <p class="hero-desc">Alfa SEO is a results-driven digital agency specialising in high-performance ad
-                    campaigns & search engine dominance for businesses that refuse to stay invisible.</p>
-                <div class="hero-actions">
-                    <a href="#pricing" class="btn-primary">
-                        View Plans
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m9 18 6-6-6-6" />
-                        </svg>
-                    </a>
-                    <a href="#services" class="btn-outline">Our Services</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <h3>150+</h3>
-                        <p>Clients Served</p>
-                    </div>
-                    <div class="hero-stat">
-                        <h3>3.2&times;</h3>
-                        <p>Avg. ROAS</p>
-                    </div>
-                    <div class="hero-stat">
-                        <h3>98%</h3>
-                        <p>Retention Rate</p>
-                    </div>
-                </div>
+        <div class="hero-inner reveal">
+            <div class="label"><span class="dot"></span> Nashik, India</div>
+            <h1 class="heading-xl">We make brands<br /><em>rank, convert</em> & grow.</h1>
+            <p class="body-text">Results-driven SEO & ad campaigns for businesses that refuse to stay invisible.</p>
+            <div class="hero-actions">
+                <a href="#pricing" class="btn btn-fill">View Plans
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+                <a href="#services" class="btn btn-ghost">Our Services</a>
             </div>
-            <div class="hero-visual">
-                <div class="hero-graphic">
-                    <div class="orbit-ring"></div>
-                    <div class="orbit-ring"></div>
-                    <div class="orbit-ring"></div>
-                    <div class="hero-graphic-center"></div>
+        </div>
+        <div class="container-wide">
+            <div class="stats-bar">
+                <div class="stat reveal reveal-delay-1">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Clients Served</div>
+                </div>
+                <div class="stat reveal reveal-delay-2">
+                    <div class="stat-number" data-count="3.2" data-suffix="&times;" data-decimal="1">0</div>
+                    <div class="stat-label">Avg. ROAS</div>
+                </div>
+                <div class="stat reveal reveal-delay-3">
+                    <div class="stat-number" data-count="98" data-suffix="%">0</div>
+                    <div class="stat-label">Retention Rate</div>
+                </div>
+                <div class="stat reveal reveal-delay-4">
+                    <div class="stat-number" data-count="50" data-suffix="+">0</div>
+                    <div class="stat-label">Page 1 Rankings</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee-section">
-        <div class="marquee-track">
-            <span class="marquee-item">Google Ads</span>
-            <span class="marquee-item">Meta Ads</span>
-            <span class="marquee-item">Technical SEO</span>
-            <span class="marquee-item">Content Strategy</span>
-            <span class="marquee-item">Link Building</span>
-            <span class="marquee-item">Local SEO</span>
-            <span class="marquee-item">PPC Management</span>
-            <span class="marquee-item">Conversion Optimisation</span>
-            <span class="marquee-item">Google Ads</span>
-            <span class="marquee-item">Meta Ads</span>
-            <span class="marquee-item">Technical SEO</span>
-            <span class="marquee-item">Content Strategy</span>
-            <span class="marquee-item">Link Building</span>
-            <span class="marquee-item">Local SEO</span>
-            <span class="marquee-item">PPC Management</span>
-            <span class="marquee-item">Conversion Optimisation</span>
+    <!-- CLIENT LOGOS -->
+    <div class="logo-strip">
+        <div class="logo-strip-label">Trusted by brands across India</div>
+        <div class="logo-strip-row">
+            <span>GreenVita</span>
+            <span>TechNova</span>
+            <span>Kulkarni&Co</span>
+            <span>UrbanEdge</span>
+            <span>PrimeStack</span>
+            <span>Flavora</span>
         </div>
     </div>
 
     <!-- SERVICES -->
     <section class="services" id="services">
         <div class="container">
-            <div class="services-header reveal">
+            <div class="services-top reveal">
                 <div>
-                    <div class="section-label">What We Do</div>
-                    <h2 class="section-title">Services engineered<br />for growth.</h2>
+                    <div class="label">What We Do</div>
+                    <h2 class="heading-lg">Services engineered<br />for growth.</h2>
                 </div>
-                <p class="section-desc">From first-page rankings to high-converting ad funnels — every service is
-                    designed to put your brand in front of the right people at the right time.</p>
+                <p class="body-text">From first-page rankings to high-converting ad funnels — every service puts your brand in front of the right people at the right time.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8" />
-                            <path d="m21 21-4.3-4.3" />
-                        </svg>
-                    </div>
+            <div class="bento">
+                <div class="bento-card span-2 reveal reveal-delay-1">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                     <h3>SEO & Rankings</h3>
-                    <p>Full-spectrum SEO — from technical audits and on-page optimisation to authoritative link building
-                        that pushes you above the fold.</p>
-                    <span class="service-tag">Organic Growth</span>
+                    <p>Full-spectrum SEO — from technical audits and on-page optimisation to authoritative link building that pushes you above the fold. We engineer your organic visibility from the ground up.</p>
+                    <span class="bento-tag">Organic Growth</span>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <path d="m8 21 4-4 4 4" />
-                        </svg>
-                    </div>
+                <div class="bento-card reveal reveal-delay-2">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m8 21 4-4 4 4"/></svg>
                     <h3>Google & Meta Ads</h3>
-                    <p>Data-driven campaigns on Google, Facebook & Instagram that maximise every rupee of your ad spend
-                        with laser-targeted audiences.</p>
-                    <span class="service-tag">Paid Performance</span>
+                    <p>Data-driven campaigns on Google, Facebook & Instagram that maximise every rupee with laser-targeted audiences.</p>
+                    <span class="bento-tag">Paid Performance</span>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 20V10" />
-                            <path d="M18 20V4" />
-                            <path d="M6 20v-4" />
-                        </svg>
-                    </div>
+                <div class="bento-card reveal reveal-delay-3">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
                     <h3>Analytics & CRO</h3>
-                    <p>Turn traffic into revenue. We instrument your funnels, run A/B tests, and optimise every
-                        touchpoint for conversions.</p>
-                    <span class="service-tag">Data-Driven</span>
+                    <p>Turn traffic into revenue. We instrument your funnels, run A/B tests, and optimise every touchpoint for conversions.</p>
+                    <span class="bento-tag">Data-Driven</span>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                        </svg>
-                    </div>
-                    <h3>Content Marketing</h3>
-                    <p>Strategic blog posts, landing pages, and content pillars that establish authority and drive
-                        sustained organic traffic growth.</p>
-                    <span class="service-tag">Authority</span>
+                <div class="bento-card span-2 reveal reveal-delay-4">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <h3>Content Marketing & Strategy</h3>
+                    <p>Strategic blog posts, landing pages, and content pillars that establish authority and drive sustained organic traffic growth. Combined with positioning, messaging frameworks, and competitive analysis for a distinct market presence.</p>
+                    <span class="bento-tag">Authority + Strategy</span>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                    </div>
+                <div class="bento-card reveal reveal-delay-5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                     <h3>Local SEO</h3>
-                    <p>Dominate local search results and Google Maps. Optimised GMB profiles, local citations, and
-                        review management for Nashik & beyond.</p>
-                    <span class="service-tag">Local Reach</span>
+                    <p>Dominate local search results and Google Maps. Optimised GMB profiles, citations, and review management.</p>
+                    <span class="bento-tag">Local Reach</span>
                 </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                            <path
-                                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-                        </svg>
-                    </div>
-                    <h3>Brand Strategy</h3>
-                    <p>Positioning, messaging frameworks, and competitive analysis that gives your brand a distinct,
-                        unforgettable market presence.</p>
-                    <span class="service-tag">Strategy</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics-strip">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric reveal reveal-delay-1">
+                    <div class="metric-number" data-count="4.8" data-suffix="M+" data-decimal="1">0</div>
+                    <div class="metric-text">Ad Impressions Served</div>
+                </div>
+                <div class="metric reveal reveal-delay-2">
+                    <div class="metric-number" data-count="320" data-suffix="%">0</div>
+                    <div class="metric-text">Avg. Traffic Increase</div>
+                </div>
+                <div class="metric reveal reveal-delay-3">
+                    <div class="metric-number" data-count="5" data-suffix="yr">0</div>
+                    <div class="metric-text">Industry Experience</div>
+                </div>
+                <div class="metric reveal reveal-delay-4">
+                    <div class="metric-number" data-count="150" data-suffix="+">0</div>
+                    <div class="metric-text">Projects Delivered</div>
                 </div>
             </div>
         </div>
@@ -1469,71 +1082,37 @@
         <div class="container">
             <div class="about-grid">
                 <div class="reveal">
-                    <div class="section-label">Why Alfa SEO</div>
-                    <h2 class="section-title">Built different.<br />Results prove it.</h2>
-                    <p class="section-desc">We're a tight-knit team of SEO engineers, media buyers, and strategists
-                        based out of Nashik. No fluff, no vanity metrics — just measurable growth for your business.</p>
+                    <div class="label">Why Alfa SEO</div>
+                    <h2 class="heading-lg">Built different.<br />Results prove it.</h2>
+                    <p class="body-text">We're a tight-knit team of SEO engineers, media buyers, and strategists based out of Nashik. No fluff, no vanity metrics — just measurable growth.</p>
                     <div class="about-features">
                         <div class="about-feature">
-                            <div class="about-feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             <div>
                                 <h4>Transparent Reporting</h4>
-                                <p>Real-time dashboards, weekly reports, and full visibility into every campaign,
-                                    keyword, and rupee spent.</p>
+                                <p>Real-time dashboards, weekly reports, and full visibility into every campaign, keyword, and rupee spent.</p>
                             </div>
                         </div>
                         <div class="about-feature">
-                            <div class="about-feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             <div>
                                 <h4>No Lock-in Contracts</h4>
-                                <p>Stay because results keep you, not contracts. Month-to-month flexibility on every
-                                    plan.</p>
+                                <p>Stay because results keep you, not contracts. Month-to-month flexibility on every plan.</p>
                             </div>
                         </div>
                         <div class="about-feature">
-                            <div class="about-feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             <div>
                                 <h4>Dedicated Account Manager</h4>
-                                <p>One point of contact who knows your brand inside out. No ticket queues, no bouncing
-                                    between reps.</p>
+                                <p>One point of contact who knows your brand inside out. No ticket queues, no bouncing between reps.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-visual reveal">
-                    <div class="about-card-stack">
-                        <div class="about-metric-card">
-                            <h3>4.8M+</h3>
-                            <p>Ad Impressions Served</p>
-                        </div>
-                        <div class="about-metric-card">
-                            <h3>320%</h3>
-                            <p>Avg. Traffic Increase</p>
-                        </div>
-                        <div class="about-metric-card">
-                            <h3>50+</h3>
-                            <p>Page 1 Rankings Won</p>
-                        </div>
-                        <div class="about-metric-card">
-                            <h3>5yr</h3>
-                            <p>Industry Experience</p>
-                        </div>
-                    </div>
+                    <div class="label">What Clients Say</div>
+                    <p class="about-visual-quote">"Alfa SEO doubled our organic traffic in just four months. Their team knows exactly what they're doing — transparent, strategic, relentless."</p>
+                    <div class="about-visual-author"><strong>Rajesh Kulkarni</strong> — Founder, Kulkarni Interiors</div>
                 </div>
             </div>
         </div>
@@ -1542,158 +1121,52 @@
     <!-- PRICING -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <div class="pricing-header reveal">
-                <div class="section-label">Pricing</div>
-                <h2 class="section-title">Simple plans,<br />serious results.</h2>
-                <p class="section-desc">No hidden fees, no surprises. Pick a plan that fits your growth stage and let us
-                    handle the rest.</p>
+            <div class="pricing-top reveal">
+                <div class="label">Pricing</div>
+                <h2 class="heading-lg">Simple plans,<br />serious results.</h2>
+                <p class="body-text">No hidden fees, no surprises. Pick a plan that fits your growth stage.</p>
             </div>
             <div class="pricing-grid">
-                <!-- Starter -->
-                <div class="pricing-card reveal">
+                <div class="pricing-card reveal reveal-delay-1">
                     <div class="pricing-tier">Starter</div>
                     <div class="pricing-price">&#8377;15K <span>/mo</span></div>
                     <p class="pricing-subtitle">Best for new businesses getting started with digital.</p>
                     <ul class="pricing-features">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            On-Page SEO (up to 10 pages)
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Google My Business Setup
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Monthly Performance Report
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Basic Keyword Research
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Email Support
-                        </li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>On-Page SEO (up to 10 pages)</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google My Business Setup</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly Performance Report</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Basic Keyword Research</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Email Support</li>
                     </ul>
-                    <a href="#contact" class="btn-outline">Get Started</a>
+                    <a href="#contact" class="btn btn-ghost">Get Started</a>
                 </div>
-                <!-- Growth -->
-                <div class="pricing-card featured reveal">
+                <div class="pricing-card featured reveal reveal-delay-2">
                     <div class="pricing-tier">Growth</div>
                     <div class="pricing-price">&#8377;35K <span>/mo</span></div>
-                    <p class="pricing-subtitle">For scaling brands that need ads + SEO working in tandem.</p>
+                    <p class="pricing-subtitle">For scaling brands that need ads + SEO in tandem.</p>
                     <ul class="pricing-features">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Everything in Starter
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Google & Meta Ads Management
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Advanced Keyword & Competitor Analysis
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            4 Blog Posts / Month
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Weekly Reports + Strategy Calls
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Dedicated Account Manager
-                        </li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Starter</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Google & Meta Ads Management</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Advanced Keyword & Competitor Analysis</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4 Blog Posts / Month</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Weekly Reports + Strategy Calls</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Account Manager</li>
                     </ul>
-                    <a href="#contact" class="btn-primary">Get Started</a>
+                    <a href="#contact" class="btn btn-fill">Get Started</a>
                 </div>
-                <!-- Enterprise -->
-                <div class="pricing-card reveal">
+                <div class="pricing-card reveal reveal-delay-3">
                     <div class="pricing-tier">Enterprise</div>
                     <div class="pricing-price">Custom</div>
                     <p class="pricing-subtitle">Full-scale digital growth partnership for serious players.</p>
                     <ul class="pricing-features">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Everything in Growth
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Multi-Platform Ad Campaigns
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Full Technical SEO Overhaul
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Conversion Rate Optimisation
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Priority Support & Slack Channel
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Quarterly Strategy Reviews
-                        </li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Growth</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Multi-Platform Ad Campaigns</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full Technical SEO Overhaul</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Conversion Rate Optimisation</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority Support & Slack Channel</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Quarterly Strategy Reviews</li>
                     </ul>
-                    <a href="#contact" class="btn-outline">Contact Us</a>
+                    <a href="#contact" class="btn btn-ghost">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -1702,104 +1175,51 @@
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="reveal">
-                <div class="section-label">Client Stories</div>
-                <h2 class="section-title">Trusted by businesses<br />across India.</h2>
+            <div class="testimonials-top reveal">
+                <div>
+                    <div class="label">Client Stories</div>
+                    <h2 class="heading-lg">Trusted by businesses<br />across India.</h2>
+                </div>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
+            <div class="testimonial-featured reveal">
+                <blockquote>"The Google Ads campaigns they built are incredible. Our cost per lead dropped by 40% while volume went up. Best agency decision we've ever made."</blockquote>
+                <div class="t-author">
+                    <div class="t-avatar">PS</div>
+                    <div>
+                        <h4>Priya Sharma</h4>
+                        <p>Marketing Head, GreenVita Foods</p>
                     </div>
-                    <blockquote>"Alfa SEO doubled our organic traffic in just four months. Their team knows exactly what
-                        they're doing."</blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">RK</div>
+                </div>
+            </div>
+            <div class="testimonials-row">
+                <div class="t-card reveal reveal-delay-1">
+                    <div class="t-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <blockquote>"Alfa SEO doubled our organic traffic in just four months. Their team knows exactly what they're doing."</blockquote>
+                    <div class="t-author">
+                        <div class="t-avatar">RK</div>
                         <div>
                             <h4>Rajesh Kulkarni</h4>
                             <p>Founder, Kulkarni Interiors</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
+                <div class="t-card reveal reveal-delay-2">
+                    <div class="t-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <blockquote>"The Google Ads campaigns they built are incredible. Our cost per lead dropped by 40%
-                        while volume went up."</blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">PS</div>
-                        <div>
-                            <h4>Priya Sharma</h4>
-                            <p>Marketing Head, GreenVita Foods</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <polygon
-                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                    </div>
-                    <blockquote>"Best agency experience we've had. Responsive, strategic, and they actually care about
-                        the numbers."</blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">AJ</div>
+                    <blockquote>"Best agency experience we've had. Responsive, strategic, and they actually care about the numbers."</blockquote>
+                    <div class="t-author">
+                        <div class="t-avatar">AJ</div>
                         <div>
                             <h4>Aman Joshi</h4>
                             <p>CEO, TechNova Solutions</p>
@@ -1811,25 +1231,20 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta-section" id="contact">
+    <section class="cta" id="contact">
         <div class="container">
             <div class="cta-box reveal">
                 <div>
-                    <div class="section-label">Ready?</div>
-                    <h2 class="section-title">Let's build your<br />growth engine.</h2>
+                    <div class="label" style="color:rgba(255,255,255,0.35)">Ready?</div>
+                    <h2 class="heading-lg">Let's build your<br />growth engine.</h2>
                 </div>
                 <div>
-                    <p class="section-desc">Book a free 30-minute strategy call and we'll audit your current digital
-                        presence — no strings attached.</p>
+                    <p class="body-text">Book a free 30-minute strategy call and we'll audit your current digital presence — no strings attached.</p>
                     <div class="cta-actions">
-                        <a href="mailto:hello@alfaseo.in" class="btn-primary">
-                            Book Free Audit
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="m9 18 6-6-6-6" />
-                            </svg>
+                        <a href="mailto:hello@alfaseo.in" class="btn btn-white">Book Free Audit
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
-                        <a href="tel:+919876543210" class="btn-outline">Call Us</a>
+                        <a href="tel:+919876543210" class="btn btn-ghost-white">Call Us</a>
                     </div>
                 </div>
             </div>
@@ -1842,8 +1257,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">ALFA<span>SEO</span></a>
-                    <p>A results-first digital agency based in Nashik, Maharashtra. Helping brands rank higher, convert
-                        better, and grow faster since day one.</p>
+                    <p>A results-first digital agency based in Nashik, Maharashtra. Helping brands rank higher, convert better, and grow faster since day one.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
@@ -1876,29 +1290,9 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Alfa SEO. All rights reserved.</p>
                 <div class="footer-socials">
-                    <a href="#" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                            <rect x="2" y="9" width="4" height="12" />
-                            <circle cx="4" cy="4" r="2" />
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="X">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-                        </svg>
-                    </a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg></a>
                 </div>
             </div>
         </div>
@@ -1907,40 +1301,55 @@
     <script>
         // Navbar scroll
         const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 40);
-        });
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
 
         // Mobile menu
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('open'));
-        });
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
-        // Scroll reveal
-        const revealEls = document.querySelectorAll('.reveal');
+        // Staggered reveal
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                    entry.target.classList.add('visible');
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
-        revealEls.forEach(el => revealObserver.observe(el));
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // Smooth anchor scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Animated counters
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const end = parseFloat(el.dataset.count);
+                const suffix = el.dataset.suffix || '';
+                const decimal = parseInt(el.dataset.decimal) || 0;
+                const duration = 1800;
+                const start = performance.now();
+
+                function tick(now) {
+                    const t = Math.min((now - start) / duration, 1);
+                    const ease = 1 - Math.pow(1 - t, 4);
+                    const val = (ease * end).toFixed(decimal);
+                    el.innerHTML = val + suffix;
+                    if (t < 1) requestAnimationFrame(tick);
                 }
+
+                requestAnimationFrame(tick);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
     </script>
