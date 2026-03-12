@@ -234,12 +234,20 @@
             box-shadow: 0 1px 0 rgba(0,0,0,0.06);
         }
 
-        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 301;
+        }
 
         .logo {
             font-weight: 800;
             font-size: 1.15rem;
             letter-spacing: -0.03em;
+            z-index: 301;
+            position: relative;
         }
 
         .logo span { color: var(--accent); font-weight: 800; }
@@ -279,9 +287,11 @@
         .hamburger {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             background: none;
             padding: 4px;
+            z-index: 301;
+            position: relative;
         }
 
         .hamburger span {
@@ -289,8 +299,24 @@
             height: 2px;
             background: var(--text);
             border-radius: 2px;
-            transition: transform 0.3s, opacity 0.3s;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.25s;
+            transform-origin: center;
         }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        body.menu-open { overflow: hidden; }
 
         /* ── HERO ── */
         .hero {
@@ -671,6 +697,76 @@
 
         .about-visual .label { color: rgba(255,255,255,0.35); position: relative; }
 
+        /* Animated dashboard mockup */
+        .about-dash {
+            position: relative;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+        }
+
+        .about-dash-header {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .about-dash-header span {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .about-dash-header span:first-child { background: #e03e2d; }
+        .about-dash-header span:nth-child(2) { background: #f5a623; }
+        .about-dash-header span:nth-child(3) { background: #548c2f; }
+
+        .about-dash-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 6px;
+            height: 64px;
+        }
+
+        .about-dash-bar {
+            flex: 1;
+            border-radius: 4px 4px 0 0;
+            animation: barGrow 2.5s ease-in-out infinite alternate;
+        }
+
+        .about-dash-bar:nth-child(1) { height: 40%; background: rgba(224,62,45,0.5); animation-delay: 0s; }
+        .about-dash-bar:nth-child(2) { height: 65%; background: rgba(224,62,45,0.6); animation-delay: 0.15s; }
+        .about-dash-bar:nth-child(3) { height: 45%; background: rgba(224,62,45,0.5); animation-delay: 0.3s; }
+        .about-dash-bar:nth-child(4) { height: 80%; background: rgba(224,62,45,0.7); animation-delay: 0.45s; }
+        .about-dash-bar:nth-child(5) { height: 55%; background: rgba(224,62,45,0.55); animation-delay: 0.6s; }
+        .about-dash-bar:nth-child(6) { height: 90%; background: rgba(224,62,45,0.8); animation-delay: 0.75s; }
+        .about-dash-bar:nth-child(7) { height: 70%; background: rgba(224,62,45,0.65); animation-delay: 0.9s; }
+        .about-dash-bar:nth-child(8) { height: 95%; background: var(--accent); animation-delay: 1.05s; }
+
+        @keyframes barGrow {
+            0% { transform: scaleY(0.6); }
+            100% { transform: scaleY(1); }
+        }
+
+        .about-dash-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .about-dash-line .dash-up {
+            color: #548c2f;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
         .about-visual-quote {
             font-weight: 500;
             font-size: clamp(1.2rem, 2.2vw, 1.6rem);
@@ -690,6 +786,53 @@
         .about-visual-author strong {
             color: rgba(255,255,255,0.75);
             font-weight: 600;
+        }
+
+        /* Animated floating badges in hero */
+        .hero-floats {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-float {
+            position: absolute;
+            background: var(--bg);
+            border: 1px solid #ebebea;
+            border-radius: var(--radius);
+            padding: 10px 16px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text);
+            animation: floatBadge 6s ease-in-out infinite;
+            white-space: nowrap;
+        }
+
+        .hero-float svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        .hero-float:nth-child(1) {
+            top: 28%; left: 4%;
+            animation-delay: 0s;
+        }
+
+        .hero-float:nth-child(2) {
+            top: 35%; right: 4%;
+            animation-delay: 1.5s;
+        }
+
+        .hero-float:nth-child(3) {
+            bottom: 32%; left: 6%;
+            animation-delay: 3s;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
 
         /* ── PRICING ── */
@@ -992,12 +1135,12 @@
         /* ── RESPONSIVE: TABLET ── */
         @media (max-width: 1024px) {
             .bento { grid-template-columns: 1fr 1fr; }
-            .bento-card.span-2 { grid-column: span 2; }
+            .bento-card.span-2 { grid-column: auto; }
 
             .pricing-grid { grid-template-columns: 1fr 1fr; }
-            .pricing-card:last-child {
-                grid-column: span 2;
-                max-width: 50%;
+            .pricing-card:nth-child(3) {
+                grid-column: 1 / -1;
+                max-width: 480px;
                 justify-self: center;
             }
 
@@ -1010,6 +1153,8 @@
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }
 
             .about-grid { gap: 48px; }
+
+            .services-top { gap: 24px; }
         }
 
         /* ── RESPONSIVE: MOBILE ── */
@@ -1023,14 +1168,44 @@
                 position: fixed;
                 inset: 0;
                 background: var(--bg);
-                z-index: 200;
+                z-index: 300;
                 justify-content: center;
                 align-items: center;
-                gap: 28px;
+                gap: 12px;
+                padding: 100px 24px 48px;
+                animation: menuFadeIn 0.3s ease;
             }
 
-            .nav-links.open a { font-size: 1.2rem; color: var(--text); }
-            .nav-links.open .nav-cta { font-size: 1rem; padding: 12px 28px; }
+            @keyframes menuFadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            .nav-links.open li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links.open a {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--text);
+                display: block;
+                padding: 14px 0;
+                border-bottom: 1px solid #ebebea;
+            }
+
+            .nav-links.open li:last-child a { border-bottom: none; }
+
+            .nav-links.open .nav-cta {
+                font-size: 1rem;
+                padding: 16px 32px;
+                margin-top: 16px;
+                display: inline-block;
+                border-bottom: none;
+                color: #fff !important;
+                border-radius: var(--radius);
+            }
 
             .hero { padding: 120px 0 0; }
             .hero h1 { margin: 16px 0 20px; }
@@ -1084,9 +1259,10 @@
                 gap: 16px;
             }
 
-            .pricing-card:last-child {
+            .pricing-card:nth-child(3) {
                 grid-column: auto;
                 max-width: 100%;
+                justify-self: stretch;
             }
 
             .testimonial-featured { padding: 40px 28px; }
@@ -1101,6 +1277,11 @@
 
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+        }
+
+        /* hide floating badges on tablets and below */
+        @media (max-width: 1024px) {
+            .hero-floats { display: none; }
         }
 
         /* ── RESPONSIVE: SMALL ── */
@@ -1134,6 +1315,20 @@
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-floats">
+            <div class="hero-float">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#548c2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                +320% Traffic
+            </div>
+            <div class="hero-float">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#e03e2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Page 1 in 90 days
+            </div>
+            <div class="hero-float">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#337ea9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                3.2x ROAS
+            </div>
+        </div>
         <div class="hero-inner reveal">
             <div class="pill"><span class="pill-dot"></span> Trusted by 150+ brands across India</div>
             <h1 class="heading-xl">We make brands<br /><span class="gradient-text">rank, convert</span> & grow.</h1>
@@ -1304,7 +1499,29 @@
                     </div>
                 </div>
                 <div class="about-visual reveal">
-                    <div class="label">What Clients Say</div>
+                    <div class="label">Live Performance</div>
+                    <div class="about-dash">
+                        <div class="about-dash-header">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="about-dash-bars">
+                            <div class="about-dash-bar"></div>
+                            <div class="about-dash-bar"></div>
+                            <div class="about-dash-bar"></div>
+                            <div class="about-dash-bar"></div>
+                            <div class="about-dash-bar"></div>
+                            <div class="about-dash-bar"></div>
+                            <div class="about-dash-bar"></div>
+                            <div class="about-dash-bar"></div>
+                        </div>
+                        <div class="about-dash-line">
+                            Organic Traffic
+                            <span class="dash-up">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                                +320%
+                            </span>
+                        </div>
+                    </div>
                     <p class="about-visual-quote">"Alfa SEO doubled our organic traffic in just four months. Their team knows exactly what they're doing — transparent, strategic, relentless."</p>
                     <div class="about-visual-author"><strong>Rajesh Kulkarni</strong> — Founder, Kulkarni Interiors</div>
                 </div>
@@ -1499,8 +1716,21 @@
         // Mobile menu
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active', isOpen);
+            document.body.classList.toggle('menu-open', isOpen);
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
 
         // Staggered reveal
         const revealObserver = new IntersectionObserver((entries) => {
